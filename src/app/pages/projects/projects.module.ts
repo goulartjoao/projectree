@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectsComponent } from './projects.component';
-import { ROUTES } from 'src/app/pages/projects/projects.routes';
+import { ProjectsDetailsComponent } from './projects-details/projects-details.component';
+import { ProjectsRoutes } from 'src/app/pages/projects/projects.routes';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -11,13 +12,16 @@ import { MatInputModule } from '@angular/material/input';
 @NgModule({
   imports: [
     CommonModule,
-    ROUTES,
     FormsModule,
     MatCardModule,
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
+    ProjectsRoutes,
   ],
-  declarations: [ProjectsComponent]
+  declarations: [
+    ProjectsComponent,
+    ProjectsDetailsComponent
+  ]
 })
 export class ProjectsModule { }

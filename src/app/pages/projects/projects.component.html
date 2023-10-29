@@ -2,13 +2,15 @@
   <div class="row">
     <div class="col-xs-12 col-md-4 col-lg-4" *ngFor="let project of projects">
       <mat-card>
+        <mat-card-header>
+          <h2>{{ project.name }}</h2>
+        </mat-card-header>
         <mat-card-content>
-          Name: {{ project.name }}<br>
           Description: {{ project.description }}<br>
-          Area extension: {{ project.area_extension }}<br>
-          latitude: {{ project.latitude }}<br>
-          longitude: {{ project.longitude }}<br>
         </mat-card-content>
+        <mat-card-footer>
+          <button mat-stroked-button color="primary" [routerLink]="[project.id, 'details']">Project details</button>
+        </mat-card-footer>
       </mat-card>
     </div>
   </div>
