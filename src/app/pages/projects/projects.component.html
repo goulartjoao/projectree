@@ -1,0 +1,15 @@
+<div class="dashboard-content">
+  <div class="row">
+    <div class="col-xs-12 col-md-4 col-lg-4" *ngFor="let project of projects">
+      <mat-card>
+        <mat-card-content>
+          Name: {{ project.name }}<br>
+          Description: {{ project.description }}<br>
+          Area extension: {{ project.area_extension }}<br>
+          latitude: {{ project.latitude }}<br>
+          longitude: {{ project.longitude }}<br>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
