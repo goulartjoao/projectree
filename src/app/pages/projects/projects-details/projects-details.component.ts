@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { RelevantInfoComponent } from '../relevant-info/relevant-info.component';
 import { ApiService } from 'src/app/shared/services/api/api.service';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { ToastService } from 'src/app/shared/services/toastr/toast.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ComponentType } from '@angular/cdk/portal';
 import Map from 'ol/Map';
 import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
@@ -19,6 +22,7 @@ export class ProjectsDetailsComponent implements OnInit {
     private _activatedRoute: ActivatedRoute,
     private _clipboard: Clipboard,
     private _toastService: ToastService,
+    private _dialog: MatDialog,
 
   ) { }
   public project: any;
@@ -75,6 +79,18 @@ export class ProjectsDetailsComponent implements OnInit {
         zoom: 5,
         projection: 'EPSG:4326',
       }),
+    });
+  }
+
+  public openRelevantInfo() {
+    this._openModalOrDialog(RelevantInfoComponent, this.project);
+  }
+
+  private _openModalOrDialog(component: ComponentType<any>, project: any) {
+    this._dialog.open(component, {
+      width: '1200px',
+      height: '600px',
+      data: project,
     });
   }
 

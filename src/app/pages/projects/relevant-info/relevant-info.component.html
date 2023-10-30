@@ -1,0 +1,25 @@
+<mat-dialog-content>
+  <div class="modal-content">
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-lg-6" *ngFor="let relevantInfo of relevantInfos">
+        <h2 *ngIf="!relevantInfo">
+          <b>No relevantInfo found for this project:</b>
+        </h2>
+        <mat-card *ngIf="relevantInfo">
+          <mat-card-header>
+            <h4><b>Created at:</b> {{ relevantInfo.created_at }}</h4>
+          </mat-card-header>
+          <mat-card-content>
+            <b>Author:</b> {{ relevantInfo.author }}<br>
+            <b>Commentary:</b> {{ relevantInfo.commentary }}<br><br>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions class="buttons-container">
+  <button mat-stroked-button color="warn" (click)="close()" class="left-button">Close</button>
+  <button mat-raised-button color="primary" (click)="openForm()" class="right-button">Add a Relevant Info</button>
+</mat-dialog-actions>
+

@@ -11,6 +11,10 @@
           <b>Latitude:</b> {{ project?.latitude}} <br>
           <b>Longitude:</b> {{ project?.longitude }} <br>
         </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-actions>
+          <button mat-stroked-button color="primary" (click)="openRelevantInfo()">Relevant infos about the project</button>
+        </mat-card-actions>
       </mat-card>
     </div>
   </div>
