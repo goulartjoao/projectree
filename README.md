@@ -1,27 +1,56 @@
-# Projectree
+# ProjecTree
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+## Description
 
-## Development server
+Welcome to the ProjecTree. This application provides essential informations to manage environmental projects, tasks, and more.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Getting Started
 
-## Code scaffolding
+### Dependencies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To run this application, the requirements are:
 
-## Build
+* Windows
+* Node
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Installing
 
-## Running unit tests
+After cloning, installing, and running the [@ProjecTree-API](https://github.com/goulartjoao/projectree-api), clone this repository to your local machine:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+git clone https://github.com/goulartjoao/projectree.git
+```
 
-## Running end-to-end tests
+```
+cd projectree
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Executing program
 
-## Further help
+Run this command to install the dependencies:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+npm install
+```
+
+Run this command to start the project:
+
+```
+npm run start
+```
+
+## Authors
+
+João Pedro Goulart
+[@LinkedIn](https://www.linkedin.com/in/jo%C3%A3o-pedro-goulart-36033b249/)
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details
+
+## Acknowledgments
+
+Inspiration, code snippets, etc.
+
+* [Angular Material](https://material.angular.io/)
+* [OpenLayers](https://openlayers.org/)
