@@ -1,18 +1,7 @@
-.dashboard-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.row > div {
-  width: 100%;
-  margin-bottom: 16px;
-  margin-top: 16px;
-  box-sizing: border-box;
-}
-
-@media (min-width: 768px) {
-  .col-md-4 {
-    flex: 0 0 calc(33.333% - 16px);
-  }
+#map {
+  position: absolute;
+  top: 200px;
+  bottom: 0;
+  left: 200px;
+  width: 50%;
 }

@@ -1,5 +1,12 @@
-Name: {{ project.name }} <br>
-Description: {{ project.description }} <br>
-Area extension: {{ project.area_extension }} <br>
-Latitude: {{ project.latitude}} <br>
-Longitude: {{ project.longitude }} <br>
+<div class="row">
+  Name: {{ project?.name }} <br>
+  Description: {{ project?.description }} <br>
+  Area extension: {{ project?.area_extension }} <br>
+  Latitude: {{ project?.latitude}} <br>
+  Longitude: {{ project?.longitude }} <br>
+</div>
+<!-- <button mat-stroked-button color="primary" (click)="generateMap(this.project.longitude, this.project.latitude)">Map</button> -->
+
+<div class="row">
+  <div class="row" id="map"></div>
+</div>
