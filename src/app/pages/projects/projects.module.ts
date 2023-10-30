@@ -10,6 +10,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
   imports: [
@@ -21,6 +23,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatInputModule,
     MatSliderModule,
     MatDividerModule,
+    MatIconModule,
     ProjectsRoutes,
   ],
   declarations: [

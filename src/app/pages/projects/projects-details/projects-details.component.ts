@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ApiService } from 'src/app/shared/services/api.service';
+import { ApiService } from 'src/app/shared/services/api/api.service';
+import { Clipboard } from '@angular/cdk/clipboard';
+import { ToastService } from 'src/app/shared/services/toastr/toast.service';
 import Map from 'ol/Map';
 import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
@@ -14,7 +16,9 @@ import OSM from 'ol/source/OSM';
 export class ProjectsDetailsComponent implements OnInit {
   constructor(
     private _api: ApiService,
-    private _activatedRoute: ActivatedRoute
+    private _activatedRoute: ActivatedRoute,
+    private _clipboard: Clipboard,
+    private _toastService: ToastService,
 
   ) { }
   public project: any;
@@ -72,6 +76,11 @@ export class ProjectsDetailsComponent implements OnInit {
         projection: 'EPSG:4326',
       }),
     });
+  }
+
+  public copyToClipboard(comment: string): void {
+    this._toastService.snackbar('Copied to clipboard');
+    this._clipboard.copy(comment);
   }
 
 }

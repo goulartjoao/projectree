@@ -6,10 +6,10 @@
           <h2>{{ project?.name }}</h2>
         </mat-card-header>
         <mat-card-content>
-          Description: {{ project?.description }} <br>
-          Area extension: {{ project?.area_extension }}m<sup>2</sup> <br>
-          Latitude: {{ project?.latitude}} <br>
-          Longitude: {{ project?.longitude }} <br>
+          <b>Description:</b> {{ project?.description }} <br>
+          <b>Area extension:</b> {{ project?.area_extension }}m<sup>2</sup> <br>
+          <b>Latitude:</b> {{ project?.latitude}} <br>
+          <b>Longitude:</b> {{ project?.longitude }} <br>
         </mat-card-content>
       </mat-card>
     </div>
@@ -31,7 +31,7 @@
     <div class="col-xs-12 col-md-6 col-lg-4">
       <mat-card>
         <mat-card-header>
-          <h4>Define the search range for scientific articles</h4>
+          <h4>Define the search range for scientific articles: </h4>
         </mat-card-header>
         <mat-card-content>
           <mat-slider min="50" max="1000" step="10" showTickMarks discrete [displayWith]="defineSearchRange">
@@ -43,18 +43,22 @@
         </mat-card-actions>
         <mat-card-footer *ngIf="articles">
           <mat-card-content *ngFor="let article of articles">
-            Pub date: {{ article.actual_pub_date }} <br>
-            Latitude: {{ article.latitude }} <br>
-            Longitude: {{ article.longitude }} <br>
-            Keyword: {{ article.keyword }} <br><br>
+            <b>Pub date:</b> {{ article.actual_pub_date }} <br>
+            <b>Keyword:</b> {{ article.keyword }} <br><br>
 
-            Title: {{ article.title }} <br>
-            Location: {{ article.location }} <br>
-            Authors: {{ article.authors }} <br>
-            Reference author: {{ article.reference_author }} <br>
-            Publication name: {{ article.publication_name }} <br>
-            Pages: {{ article.pages }} <br>
-            Pub comment: {{ article.pub_comment }} <br>
+            <b>Title:</b> {{ article.title }} <br>
+            <b>Location:</b> {{ article.location }} <br>
+            <b>Latitude:</b> {{ article.latitude }} <br>
+            <b>Longitude:</b> {{ article.longitude }} <br><br>
+            <b>Authors:</b> {{ article.authors }} <br>
+            <b>Reference author:</b> {{ article.reference_author }} <br>
+            <b>Publication name:</b> {{ article.publication_name }} <br>
+            <b>Pages:</b> {{ article.pages }} <br>
+
+            <b>Pub comment:</b> {{ article.pub_comment }}
+            <button mat-mini-fab color="primary" (click)="copyToClipboard(article.pub_comment)">
+              <mat-icon>content_copy</mat-icon>
+            </button> <br>
             <mat-divider></mat-divider> <br>
 
           </mat-card-content>
