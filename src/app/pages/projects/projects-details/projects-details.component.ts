@@ -18,7 +18,9 @@ export class ProjectsDetailsComponent implements OnInit {
 
   ) { }
   public project: any;
+  public articles: any;
   public projectId = this._activatedRoute.snapshot.params['id'];
+  public radius: number = 50;
 
   ngOnInit() {
     this.getProjectById();
@@ -39,6 +41,23 @@ export class ProjectsDetailsComponent implements OnInit {
     });
   }
 
+  public defineSearchRange(value: number): string {
+    this.radius = value;
+    return `${value}km`;
+  }
+
+  public getArticlesNearProject() {
+    this.articles = [];
+    this._api.get(`/api/articles/articlesNearProject/${this.projectId}/${this.radius}`).subscribe({
+      next: (data) => {
+        this.articles = data;
+        console.log(this.articles)
+      },
+      error: (e) => console.error(e),
+      complete: () => console.info('complete'),
+    });
+  }
+
   public generateMap(longitude: string, latitude: string) {
     const map = new Map({
       target: 'map',
@@ -49,7 +68,7 @@ export class ProjectsDetailsComponent implements OnInit {
       ],
       view: new View({
         center: [Number(longitude), Number(latitude)],
-        zoom: 5, // Nível de zoom
+        zoom: 5,
         projection: 'EPSG:4326',
       }),
     });
