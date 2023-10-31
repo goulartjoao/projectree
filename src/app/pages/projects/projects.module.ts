@@ -4,6 +4,7 @@ import { ProjectsComponent } from './projects.component';
 import { ProjectsDetailsComponent } from './projects-details/projects-details.component';
 import { RelevantInfoComponent } from './relevant-info/relevant-info.component';
 import { CreateRelevantInfoComponent } from './relevant-info/create-relevant-info/create-relevant-info.component';
+import { CreateProjectComponent } from './create-project/create-project.component';
 import { ProjectsRoutes } from 'src/app/pages/projects/projects.routes';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -36,6 +37,7 @@ import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
     ProjectsDetailsComponent,
     RelevantInfoComponent,
     CreateRelevantInfoComponent,
+    CreateProjectComponent,
   ],
   providers: [{ provide: MAT_DIALOG_DATA, useValue: {} }],
 })
